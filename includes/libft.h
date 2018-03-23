@@ -22,6 +22,7 @@
 # include <stdio.h>
 
 # define BUFF_SIZE 1000
+# define WHITESPACE(x) x == '\t' || x == '\n' || x == ' '
 
 typedef	struct			s_list
 {
@@ -108,5 +109,6 @@ void					ft_swap(int *a, int *b);
 int						ft_count_elems(t_list *list, char **av, int switcher);
 void					ft_free_2d_array(char **av);
 size_t					ft_power(int n, int p);
+char**					ft_strsplit_whitespaces(char const *s);
 
 #endif

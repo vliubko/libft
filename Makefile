@@ -23,7 +23,7 @@ ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_itoa.c \
 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_swap.c \
 ft_int_sort.c ft_isspace.c ft_strrev.c ft_sqrt.c ft_count_elems.c \
-ft_free_2d_array.c get_next_line.c
+ft_free_2d_array.c get_next_line.c ft_strsplit_whitespaces.c
 
 SRC		= $(addprefix src/, $(FILES))
 OBJ		= $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: vliubko <vliubko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/31 11:56:02 by vliubko           #+#    #+#             */
-/*   Updated: 2017/11/13 15:20:14 by vliubko          ###   ########.fr       */
+/*   Updated: 2018/03/23 11:45:53 by vliubko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ void	ft_putstr(char const *s)
 {
 	if (!s)
 		return ;
-	while (*s != '\0')
-	{
-		ft_putchar(*s);
-		s = s + 1;
-	}
+	write(1, s, ft_strlen(s));
 }
+
+/*
+**	while (*s != '\0')
+**	{
+**		ft_putchar(*s);
+**		s = s + 1;
+**	}
+*/

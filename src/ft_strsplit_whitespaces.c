@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strsplit_whitespaces.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vliubko <vliubko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:39:42 by vliubko           #+#    #+#             */
-/*   Updated: 2018/03/23 15:54:43 by vliubko          ###   ########.fr       */
+/*   Updated: 2018/03/23 15:57:58 by vliubko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static int		ft_nword(char *str, char c)
+static int		ft_nword(char *str)
 {
 	int space_count;
 	int i;
@@ -21,9 +21,9 @@ static int		ft_nword(char *str, char c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] != c)
+		if (!(WHITESPACE(str[i])))
 		{
-			if (str[i + 1] == c || str[i + 1] == '\0')
+			if (!(WHITESPACE(str[i + 1])) || str[i + 1] == '\0')
 				space_count++;
 		}
 		i++;
@@ -31,24 +31,14 @@ static int		ft_nword(char *str, char c)
 	return (space_count);
 }
 
-static int		ft_charcheck(char x, char c)
-{
-	if (x == c)
-	{
-		return (1);
-	}
-	else
-		return (0);
-}
-
-static int		ft_wlen(char *str, int i, char c)
+static int		ft_wlen(char *str, int i)
 {
 	int	char_count;
 
 	char_count = 0;
 	while (str[i])
 	{
-		if ((str[i + 1] != c) || (str[i + 1] != 0))
+		if (!(WHITESPACE(str[i + 1])) || (str[i + 1] != 0))
 			char_count++;
 		else
 			break ;
@@ -57,7 +47,7 @@ static int		ft_wlen(char *str, int i, char c)
 	return (char_count);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char			**ft_strsplit_whitespaces(char const *s)
 {
 	char	**hand;
 	int		i;
@@ -66,18 +56,18 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s || !(hand = (char**)malloc(sizeof(s) * (ft_nword((char*)s, c) + 1))))
+	if (!s || !(hand = (char**)malloc(sizeof(s) * (ft_nword((char*)s) + 1))))
 		return (NULL);
 	while (s[i])
 	{
-		if (ft_charcheck(s[i], c) == 1)
+		if (WHITESPACE(s[i]))
 			i++;
 		else
 		{
-			if (!(hand[j] = ft_strnew(ft_wlen((char*)s, i, c) + 1)))
+			if (!(hand[j] = ft_strnew(ft_wlen((char*)s, i) + 1)))
 				return (NULL);
 			k = 0;
-			while (ft_charcheck(s[i], c) == 0 && s[i] != '\0')
+			while (!(WHITESPACE(s[i])) && s[i] != '\0')
 				hand[j][k++] = s[i++];
 			hand[j++][k] = '\0';
 		}
