@@ -21,7 +21,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-# define BUFF_SIZE 1000
+# define BUFF_SIZE 1024
 # define WHITESPACE(x) x == '\t' || x == '\n' || x == ' '
 
 typedef	struct			s_list

@@ -17,8 +17,11 @@ void	ft_free_2d_array(char **av)
 	int		i;
 	char	**new_av;
 
+	if (!av || !(*av))
+		return ;
 	i = 0;
 	new_av = av;
+
 	while (new_av[i])
 	{
 		ft_strdel(&new_av[i]);
