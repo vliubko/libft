@@ -110,5 +110,6 @@ int						ft_count_elems(t_list *list, char **av, int switcher);
 void					ft_free_2d_array(char **av);
 size_t					ft_power(int n, int p);
 char**					ft_strsplit_whitespaces(char const *s);
+char					*ft_strjoin_free(char *s1, char *s2, int free_both);
 
 #endif
