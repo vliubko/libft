@@ -18,12 +18,10 @@ char	*ft_strjoin_free(char *s1, char *s2, int free_both)
 
 	if (!(new = ft_strjoin(s1, s2)))
 		return (NULL);
-	free(s1);
-	s1 = NULL;
+	ft_strdel(&s1);
 	if (free_both)
 	{
-		free(s2);
-		s2 = NULL;
+		ft_strdel(&s2);
 	}
 	return (new);
 }
