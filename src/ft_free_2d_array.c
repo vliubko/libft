@@ -15,16 +15,11 @@
 void	ft_free_2d_array(char **av)
 {
 	int		i;
-	char	**new_av;
 
-	if (!av || !(*av))
+	if (!av)
 		return ;
-	i = 0;
-	new_av = av;
-	while (new_av[i])
-	{
-		ft_strdel(&new_av[i]);
-		i++;
-	}
-	free(new_av);
+	i = -1;
+	while (av[++i])
+		ft_strdel(&av[i]);
+	free(av);
 }
