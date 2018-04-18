@@ -25,14 +25,14 @@ ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_swap.c \
 ft_int_sort.c ft_isspace.c ft_strrev.c ft_sqrt.c ft_count_elems.c \
 ft_free_2d_array.c get_next_line.c ft_strsplit_whitespaces.c \
 ft_strjoin_free.c ft_atolonglongi.c ft_convertbinarytodecimal.c \
-ft_strchr_whitespace.c
+ft_strchr_whitespace.c ft_pathjoin.c
 
 SRC		= $(addprefix src/, $(FILES))
 OBJ		= $(SRC:.c=.o)
 HEADER	= includes/libft.h
 INC		= -I includes
 
-FLAGS	= -Wall -Werror -Wextra
+FLAGS	= -g -Wall -Werror -Wextra
 
 all: $(NAME)
 
