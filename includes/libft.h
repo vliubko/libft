@@ -6,7 +6,7 @@
 /*   By: vliubko <vliubko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 13:45:48 by vliubko           #+#    #+#             */
-/*   Updated: 2018/04/18 17:00:09 by vliubko          ###   ########.fr       */
+/*   Updated: 2018/04/18 17:04:00 by vliubko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ char					*ft_strjoin_free(char *s1, char *s2, int free_both);
 char					*ft_strchr_whitespace(const char *s);
 char					**ft_strsplit_whitespaces(char const *s);
 char					*ft_pathjoin(char *p1, char *p2);
+void					ft_print_r(char **av);
 
 #endif
