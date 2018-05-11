@@ -12,31 +12,35 @@
 
 NAME = libft.a
 
-FILES = ft_putchar.c ft_putnbr.c ft_putstr.c ft_strlen.c ft_strdup.c ft_atoi.c \
-ft_strcpy.c ft_strncpy.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
-ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c \
-ft_tolower.c ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
-ft_memchr.c ft_memcmp.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
-ft_strrchr.c ft_memalloc.c ft_memdel.c ft_putendl.c ft_strnew.c ft_strdel.c \
-ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c \
-ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_itoa.c \
-ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
-ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_swap.c \
-ft_int_sort.c ft_isspace.c ft_strrev.c ft_sqrt.c ft_count_elems.c \
-ft_free_2d_array.c get_next_line.c ft_strsplit_whitespaces.c \
-ft_strjoin_free.c ft_atolonglongi.c ft_convertbinarytodecimal.c \
-ft_strchr_whitespace.c ft_pathjoin.c ft_print_r.c
+FILES := ft_putchar ft_putnbr ft_putstr ft_strlen ft_strdup ft_atoi \
+ft_strcpy ft_strncpy ft_strstr ft_strnstr ft_strcmp ft_strncmp \
+ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_toupper \
+ft_tolower ft_bzero ft_memset ft_memcpy ft_memccpy ft_memmove \
+ft_memchr ft_memcmp ft_strcat ft_strncat ft_strlcat ft_strchr \
+ft_strrchr ft_memalloc ft_memdel ft_putendl ft_strnew ft_strdel \
+ft_strclr ft_striter ft_striteri ft_strmap ft_strmapi ft_strequ \
+ft_strnequ ft_strsub ft_strjoin ft_strtrim ft_strsplit ft_itoa \
+ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_lstnew \
+ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap ft_swap \
+ft_int_sort ft_isspace ft_strrev ft_sqrt ft_count_elems \
+ft_free_2d_array get_next_line ft_strsplit_whitespaces \
+ft_strjoin_free ft_atolonglongi ft_convertbinarytodecimal \
+ft_strchr_whitespace ft_pathjoin ft_print_r
 
-SRC		= $(addprefix src/, $(FILES))
-OBJ		= $(SRC:.c=.o)
+SRC 	= $(addprefix $(S_DIR)/, $(addsuffix .c, $(FILES)))
+OBJ 	= $(addprefix $(O_DIR)/, $(addsuffix .o, $(FILES)))
+
+S_DIR 	= src
+O_DIR 	= obj
+
 HEADER	= includes/libft.h
 INC		= -I includes
 
-FLAGS	= -g -Wall -Werror -Wextra
+FLAGS	= -Wall -Werror -Wextra
 
-all: $(NAME)
+all: obj $(NAME)
 
-$(OBJ): %.o : %.c $(HEADER)
+$(O_DIR)/%.o: src/%.c $(HEADER)
 	@gcc $(FLAGS) -c $(INC) $< -o $@
 
 $(NAME): $(OBJ)
@@ -44,8 +48,13 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 	@echo "\033[32mLibft \033[1;32mLibft \033[1;0m\033[32m created.\033[0m"
 
+obj:
+	@mkdir -p obj
+
 clean:
-	@/bin/rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@rm -rf $(O_DIR)
+	@echo "\033[32mRemoved Libft Object Files\033[0m"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
