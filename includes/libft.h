@@ -115,5 +115,6 @@ char					**ft_strsplit_whitespaces(char const *s);
 char					*ft_pathjoin(char *p1, char *p2);
 void					ft_print_r(char **av);
 int						ft_strends(char *s1, char *s2);
+void					ft_lst_pushback(t_list **alst, t_list *new_node);
 
 #endif
