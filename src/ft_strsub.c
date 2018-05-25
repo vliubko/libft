@@ -14,21 +14,20 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*new;
-	size_t	i;
+	char *temp_ptr;
+	char *ptr;
 
-	if (!s)
+	if (s == NULL || start > ft_strlen(s))
 		return (NULL);
-	if (len == 0)
-		return (new = (char*)malloc(sizeof(char) * (len + 1)));
-	new = (char*)malloc(sizeof(char) * (len + 1));
-	if (!new)
+	if (!(temp_ptr = ft_strnew(len + 1)))
 		return (NULL);
-	i = 0;
-	while (i < len)
+	ptr = temp_ptr;
+	while (len-- > 0 && s[start] != '\0')
 	{
-		new[i++] = s[start++];
+		*temp_ptr = s[start];
+		start++;
+		temp_ptr++;
 	}
-	new[i] = '\0';
-	return (new);
+	*temp_ptr = '\0';
+	return (ptr);
 }
