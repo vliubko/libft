@@ -6,7 +6,7 @@
 /*   By: vliubko <vliubko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 13:45:48 by vliubko           #+#    #+#             */
-/*   Updated: 2018/04/18 17:04:00 by vliubko          ###   ########.fr       */
+/*   Updated: 2018/06/10 11:43:00 by vliubko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,8 @@ char					*ft_pathjoin(char *p1, char *p2);
 void					ft_print_r(char **av);
 int						ft_strends(char *s1, char *s2);
 void					ft_lst_pushback(t_list **alst, t_list *new_node);
+char					***ft_convert_2dtab_to_3dtab(char **old);
+void					var_dump_3d_tab(char ***arr);
+void					var_dump(char **arr);
 
 #endif
