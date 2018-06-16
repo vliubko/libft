@@ -119,5 +119,6 @@ void					ft_lst_pushback(t_list **alst, t_list *new_node);
 char					***ft_convert_2dtab_to_3dtab(char **old);
 void					var_dump_3d_tab(char ***arr);
 void					var_dump(char **arr);
+char					***ft_convert_2dtab_to_3dtab(char **old);
 
 #endif
