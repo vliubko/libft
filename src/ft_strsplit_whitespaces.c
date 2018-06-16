@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit_whitespaces.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vliubko <vliubko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vliubko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:39:42 by vliubko           #+#    #+#             */
-/*   Updated: 2018/03/23 15:57:58 by vliubko          ###   ########.fr       */
+/*   Updated: 2018/06/16 11:50:14 by vliubko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		ft_nword(char *str)
 	{
 		if (!(WHITESPACE(str[i])))
 		{
-			if (!(WHITESPACE(str[i + 1])) || str[i + 1] == '\0')
+			if (WHITESPACE(str[i + 1]) || str[i + 1] == '\0')
 				space_count++;
 		}
 		i++;

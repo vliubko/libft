@@ -26,7 +26,7 @@ ft_int_sort ft_isspace ft_strrev ft_sqrt ft_count_elems \
 ft_free_2d_array get_next_line ft_strsplit_whitespaces \
 ft_strjoin_free ft_atolonglongi ft_convertbinarytodecimal \
 ft_strchr_whitespace ft_pathjoin ft_print_r ft_strends \
-ft_lst_pushback ft_convert_2dtab_to_3dtab
+ft_lst_pushback ft_convert_2dtab_to_3dtab var_dump
 
 SRC 	= $(addprefix $(S_DIR)/, $(addsuffix .c, $(FILES)))
 OBJ 	= $(addprefix $(O_DIR)/, $(addsuffix .o, $(FILES)))

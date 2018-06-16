@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   var_dump.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vliubko <vliubko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vliubko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 11:00:46 by vliubko           #+#    #+#             */
-/*   Updated: 2018/06/10 11:42:08 by vliubko          ###   ########.fr       */
+/*   Updated: 2018/06/16 11:22:18 by vliubko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	var_dump(char **arr)
 		ft_putstr("\"");
 		i++;
 	}
+	ft_putstr("\n");
 }
 
 void	var_dump_3d_tab(char ***arr)
@@ -37,7 +38,7 @@ void	var_dump_3d_tab(char ***arr)
 	{
 		ft_putstr("\nARRAY[");
 		ft_putnbr(i);
-		ft_putstr("]:");
+		ft_putstr("]:\n");
 		var_dump(arr[i]);
 		ft_putstr("\n");
 		i++;
